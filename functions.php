@@ -141,6 +141,11 @@ function culture_mouvement_scripts() {
 	wp_enqueue_style( 'culture_mouvement-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'culture_mouvement-style', 'rtl', 'replace' );
 
+	// Enqueue header styles
+	wp_enqueue_style( 'culture_mouvement-header', get_template_directory_uri() . '/style/header.css', array(), _S_VERSION );
+	
+	// Enqueue footer styles
+
 	wp_enqueue_script( 'culture_mouvement-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -176,3 +181,53 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Enqueue Leaflet.js uniquement sur la page d'accueil
+ */
+function culture_mouvement_enqueue_leaflet() {
+    if ( is_front_page() ) {
+
+        // Leaflet CSS
+        wp_enqueue_style(
+            'leaflet-css',
+            'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
+            [],
+            '1.9.4'
+        );
+
+        // ── Ton CSS custom pour la map ──
+        wp_enqueue_style(
+            'map-css',
+            get_template_directory_uri() . '/styles/map.css',
+            [ 'leaflet-css' ], // ← chargé après Leaflet
+            filemtime( get_template_directory() . '/styles/map.css' )
+        );
+
+        // Leaflet JS
+        wp_enqueue_script(
+            'leaflet-js',
+            'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js',
+            [],
+            '1.9.4',
+            true // ← dans le footer
+        );
+
+        // Ton script custom
+        wp_enqueue_script(
+            'map-init',
+            get_template_directory_uri() . '/js/map-init.js',
+            [ 'leaflet-js' ],
+            filemtime( get_template_directory() . '/js/map-init.js' ),
+            true
+        );
+
+
+        // Passer les coordonnées PHP → JS
+        wp_localize_script( 'map-init', 'mapConfig', [
+            'lat'  => '48.8566',
+            'lng'  => '2.3522',
+            'nom'  => 'Culture Mouvement',
+        ]);
+    }
+}
+add_action( 'wp_enqueue_scripts', 'culture_mouvement_enqueue_leaflet' );
