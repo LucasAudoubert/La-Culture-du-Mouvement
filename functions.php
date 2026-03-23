@@ -228,6 +228,18 @@ function culture_mouvement_enqueue_leaflet() {
             'lng'  => '2.3522',
             'nom'  => 'Culture Mouvement',
         ]);
+
+		wp_localize_script( 'map-init', 'mapConfig', [
+			'adresse'   => '21 avenue du muguet, 95230 Soisy-sous-Montmorency, France',
+			'cp_ville'  => '95230 Soisy-sous-Montmorency',
+			'rue'       => '21 avenue du muguet',
+			'gare'      => 'Gare la plus proche du local',
+			'parking'   => 'Nom du parking',
+			'email'     => 'coach.laculturemouvement@gmail.com',
+			'telephone' => '+33 6 00 00 00 00',
+			'nom'       => 'Culture Mouvement',
+		]);
     }
 }
 add_action( 'wp_enqueue_scripts', 'culture_mouvement_enqueue_leaflet' );
+
