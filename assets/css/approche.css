@@ -1,0 +1,128 @@
+.approach-section {
+  background-color: #ffffff;
+  padding: 100px 0;
+  color: #000000;
+}
+
+.approach-section .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.section-title {
+  font-size: 60px;
+  font-weight: 800;
+  margin-bottom: 60px;
+  border-bottom: 2px solid #000;
+  display: flex; /* Utilise flex pour aligner le texte et le point */
+  align-items: baseline;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.section-title .dot {
+  display: inline-block;
+  width: 12px; /* Taille du point */
+  height: 12px;
+  background-color: #e5b669;
+  border-radius: 50%; /* Rend le point parfaitement rond */
+  margin-left: 15px; /* Espace entre le texte et le point */
+  transform: translateY(-5px); /* Ajuste la hauteur si nécessaire */
+}
+
+.cards-container {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.approach-card {
+  flex: 1;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;
+}
+
+/* Couleurs des cartes */
+.card-light {
+  background-color: #f0f5f7;
+  color: #000;
+}
+.card-dark {
+  background-color: #0a1d22;
+  color: #fff;
+}
+.card-teal {
+  background-color: #3c788c;
+  color: #fff;
+}
+
+.icon-yellow {
+  color: #e5b669;
+}
+
+.approach-card h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.approach-card .subtitle {
+  font-size: 14px;
+  opacity: 0.7;
+  margin-bottom: 60px;
+  display: block;
+}
+
+.approach-card .line {
+  width: 60px;
+  height: 3px;
+  margin-bottom: 30px;
+}
+
+.card-light .line {
+  background-color: #3c788c;
+}
+.card-dark .line {
+  background-color: #e5b669;
+}
+.card-teal .line {
+  background-color: #fff;
+}
+
+.approach-card p {
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 280px;
+}
+
+/* ... (début du fichier inchangé) ... */
+
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 60px; /* Hauteur max pour l'icône */
+  margin-bottom: 20px;
+}
+
+.card-icon img {
+  height: 100%; /* Prend toute la hauteur disponible du parent */
+  width: auto; /* Conserve les proportions */
+  display: block;
+}
+
+/* Tailles spécifiques pour tes icônes si besoin d'ajuster */
+.brain-icon img {
+  height: 50px;
+}
+.cross-icon img {
+  height: 60px;
+}
+.pulse-icon img {
+  height: 55px;
+}
+
+/* ... (reste du fichier inchangé) ... */

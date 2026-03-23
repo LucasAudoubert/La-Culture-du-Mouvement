@@ -128,3 +128,7 @@ function afficher_dashboard_calendrier_hexfit()
 <?php return ob_get_clean();
 }
 add_shortcode('calendrier_dashboard', 'afficher_dashboard_calendrier_hexfit');
+
+
+require_once get_template_directory() . '/inc/setup.php';
+require_once get_template_directory() . '/inc/enqueue.php';
