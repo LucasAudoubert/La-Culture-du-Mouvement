@@ -2,12 +2,15 @@
   background-color: #ffffff;
   padding: 100px 0;
   color: #000000;
+  position: relative;
+  z-index: 10;
 }
 
 .approach-section .container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 40px;
+  z-index: 2;
 }
 
 .section-title {
@@ -124,5 +127,3 @@
 .pulse-icon img {
   height: 55px;
 }
-
-/* ... (reste du fichier inchangé) ... */

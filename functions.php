@@ -132,3 +132,17 @@ add_shortcode('calendrier_dashboard', 'afficher_dashboard_calendrier_hexfit');
 
 require_once get_template_directory() . '/inc/setup.php';
 require_once get_template_directory() . '/inc/enqueue.php';
+
+function enqueue_hero_effects()
+{
+	if (is_front_page()) {
+		wp_enqueue_script(
+			'hero-effects',
+			get_template_directory_uri() . '/assets/js/hero-effects.js',
+			array(),
+			null,
+			true
+		);
+	}
+}
+add_action('wp_enqueue_scripts', 'enqueue_hero_effects');

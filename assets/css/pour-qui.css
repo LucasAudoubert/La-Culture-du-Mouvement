@@ -10,6 +10,7 @@
   background-attachment: fixed;
   padding: 100px 0;
   color: #ffffff;
+  z-index: 10;
 }
 
 /* Overlay sombre */
