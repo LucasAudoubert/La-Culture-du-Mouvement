@@ -6,6 +6,7 @@
 	get_template_part('components/hero');
 	get_template_part('components/approche');
 	get_template_part('components/pour-qui');
+	get_template_part('components/map');
 
 	// Les futurs composants (Approche, A propos, etc.) viendront s'ajouter ici
 	?>

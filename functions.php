@@ -146,3 +146,33 @@ function enqueue_hero_effects()
 	}
 }
 add_action('wp_enqueue_scripts', 'enqueue_hero_effects');
+
+
+function enqueue_map_assets()
+{
+	// 1. Charger le CSS de Leaflet (obligatoire pour la carte)
+	wp_enqueue_style('leaflet-css', 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css', array(), '1.9.4');
+
+	// 2. Charger ton CSS perso
+	wp_enqueue_style('map-style', get_template_directory_uri() . '/assets/css/map.css', array('leaflet-css'), '1.0');
+
+	// 3. Charger le JS de Leaflet
+	wp_enqueue_script('leaflet-js', 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js', array(), '1.9.4', true);
+
+	// 4. Charger ton script d'initialisation
+	wp_enqueue_script('map-init', get_template_directory_uri() . '/assets/js/map-init.js', array('leaflet-js'), '1.0', true);
+
+	// 5. Envoyer les données à "mapConfig" utilisé dans ton JS
+	// C'est ici que tu modifies tes infos de contact
+	wp_localize_script('map-init', 'mapConfig', array(
+		'nom'       => 'Culture Mouvement',
+		'adresse'   => '15 Rue de l\'Industrie, 92000 Nanterre', // Utilisé pour le placement GPS
+		'rue'       => '15 Rue de l\'Industrie',
+		'cp_ville'  => '92000 Nanterre',
+		'gare'      => 'RER A - Nanterre Ville (5 min)',
+		'parking'   => 'Gratuit dans la rue',
+		'email'     => 'contact@culturemouvement.fr',
+		'telephone' => '01 47 21 00 00'
+	));
+}
+add_action('wp_enqueue_scripts', 'enqueue_map_assets');
