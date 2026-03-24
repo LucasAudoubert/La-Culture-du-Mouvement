@@ -141,9 +141,24 @@ function culture_mouvement_scripts() {
 	wp_enqueue_style( 'culture_mouvement-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'culture_mouvement-style', 'rtl', 'replace' );
 
-	// Enqueue header styles
-	wp_enqueue_style( 'culture_mouvement-header', get_template_directory_uri() . '/style/header.css', array(), _S_VERSION );
-	
+	// header.css
+
+	wp_enqueue_style(
+		'header-css',
+		get_template_directory_uri() . '/styles/header.css',
+		[],
+		filemtime( get_template_directory() . '/styles/header.css' )
+	);
+
+	// contact.css
+
+	wp_enqueue_style(
+		'contact-css',
+		get_template_directory_uri() . '/styles/contact.css',
+		[],
+		filemtime( get_template_directory() . '/styles/contact.css' )
+	);
+
 	// Enqueue footer styles
 
 	wp_enqueue_script( 'culture_mouvement-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
@@ -222,13 +237,6 @@ function culture_mouvement_enqueue_leaflet() {
         );
 
 
-        // Passer les coordonnées PHP → JS
-        wp_localize_script( 'map-init', 'mapConfig', [
-            'lat'  => '48.8566',
-            'lng'  => '2.3522',
-            'nom'  => 'Culture Mouvement',
-        ]);
-
 		wp_localize_script( 'map-init', 'mapConfig', [
 			'adresse'   => '21 avenue du muguet, 95230 Soisy-sous-Montmorency, France',
 			'cp_ville'  => '95230 Soisy-sous-Montmorency',
@@ -243,3 +251,62 @@ function culture_mouvement_enqueue_leaflet() {
 }
 add_action( 'wp_enqueue_scripts', 'culture_mouvement_enqueue_leaflet' );
 
+function culture_mouvement_enqueue_contact() {
+    if ( is_front_page() ) {
+
+        // ✅ Toutes les données au même endroit
+        wp_localize_script( 'contact-js', 'contactConfig', [
+            'email'     => 'coach.laculturemouvement@gmail.com',
+            'telephone' => '+33 6 00 00 00 00',
+            'ville'     => 'Paris, France',
+            'github'    => '',
+            'linkedin'  => 'https://www.linkedin.com/in/ton-profil/',
+            'ajax_url'  => admin_url( 'admin-ajax.php' ),
+            'nonce'     => wp_create_nonce( 'contact_nonce' ),
+        ]);
+    }
+}
+add_action( 'wp_enqueue_scripts', 'culture_mouvement_enqueue_contact' );
+
+
+/**
+ * Traitement du formulaire de contact via AJAX
+ */
+function culture_mouvement_send_contact() {
+
+    // Vérification nonce
+    if ( ! check_ajax_referer( 'contact_nonce', 'nonce', false ) ) {
+        wp_send_json_error( [ 'message' => 'Requête invalide.' ], 403 );
+    }
+
+    $nom     = sanitize_text_field( $_POST['name'] ?? '' );
+    $email   = sanitize_email( $_POST['email'] ?? '' );
+    $sujet   = sanitize_text_field( $_POST['subject'] ?? '' );
+    $message = sanitize_textarea_field( $_POST['message'] ?? '' );
+
+    if ( ! $nom || ! $email || ! $sujet || ! $message ) {
+        wp_send_json_error( [ 'message' => 'Tous les champs sont obligatoires.' ] );
+    }
+
+    if ( ! is_email( $email ) ) {
+        wp_send_json_error( [ 'message' => 'Adresse email invalide.' ] );
+    }
+
+    $destinataire = "retaliator215@gmail.com"; // Remplace par ton email de contact
+    $titre        = '[Culture Mouvement] ' . $sujet;
+    $corps        = "Nom : $nom\nEmail : $email\n\nMessage :\n$message";
+    $headers      = [
+        'Content-Type: text/plain; charset=UTF-8',
+        "Reply-To: $nom <$email>",
+    ];
+
+    $envoye = wp_mail( $destinataire, $titre, $corps, $headers );
+
+    if ( $envoye ) {
+        wp_send_json_success( [ 'message' => 'Message envoyé avec succès !' ] );
+    } else {
+        wp_send_json_error( [ 'message' => 'Erreur lors de l\'envoi. Réessayez.' ] );
+    }
+}
+add_action( 'wp_ajax_send_contact', 'culture_mouvement_send_contact' );
+add_action( 'wp_ajax_nopriv_send_contact', 'culture_mouvement_send_contact' );

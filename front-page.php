@@ -24,6 +24,7 @@ get_header(); ?>
     </section>
 
     <?php get_template_part( 'template-parts/components/map');?>
+    <?php get_template_part( 'template-parts/components/contact');?>
 
     <section id="a-propos" class="home-section">
         <div class="container">
