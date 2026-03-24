@@ -1,14 +1,12 @@
 .pour-qui-section {
   position: relative;
   width: 100%;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
   background-image: url("../img/gym-bg.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  padding: 100px 0;
+  /* Même padding que l'autre section */
+  padding: 80px 0;
   color: #ffffff;
   z-index: 10;
 }
@@ -21,135 +19,152 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
 .pour-qui-section .container {
   position: relative;
   z-index: 2;
-  max-width: 1400px;
+  /* Aligné sur l'autre section */
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 80px;
 }
 
 .pour-qui-grid {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
-  gap: 100px;
+  gap: 60px;
   align-items: center;
 }
 
 /* --- CÔTÉ IMAGE --- */
 .pour-qui-image-side {
   position: relative;
-  padding: 40px;
+  padding: 30px;
 }
 
-/* L'équerre jaune en haut à gauche */
 .pour-qui-image-side::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  width: 180px;
-  height: 180px;
+  width: 140px;
+  height: 140px;
   border-top: 4px solid #e5b669;
   border-left: 4px solid #e5b669;
 }
 
 .main-image-wrapper {
   position: relative;
-  border: 1px solid #ffffff; /* Contour blanc pur */
-  aspect-ratio: 1 / 1; /* Carré parfait */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  aspect-ratio: 1 / 1;
   overflow: hidden;
 }
 
 .main-image-wrapper img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Remplit le carré sans déformer */
+  object-fit: cover;
   display: block;
 }
 
-/* Badge jaune 100% individualisé */
 .yellow-badge {
   position: absolute;
   bottom: 0;
   right: 0;
   background-color: #e5b669;
   color: #000;
-  padding: 20px 30px;
+  padding: 18px 25px;
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
 }
 
 .yellow-badge .percent {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 800;
 }
 
 .yellow-badge .text {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 1px;
 }
 
 /* --- CÔTÉ TEXTE --- */
 .pour-qui-content .section-title {
-  font-size: 80px;
-  font-weight: 700;
-  margin-bottom: 20px;
+  /* Aligné sur l'autre section */
+  font-size: 45px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  text-transform: uppercase;
 }
 
 .title-line {
   width: 100%;
-  height: 2px;
-  background-color: #ffffff;
-  margin-bottom: 60px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin-bottom: 50px;
 }
 
 .pour-qui-list {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 35px;
 }
 
 .list-item {
   display: flex;
-  gap: 30px;
+  gap: 25px;
   position: relative;
 }
 
-/* Ligne verticale entre les chiffres */
+/* Ligne verticale */
 .list-item:not(:last-child)::after {
   content: "";
   position: absolute;
-  left: 20px;
-  top: 50px;
+  left: 15px;
+  top: 45px;
   width: 1px;
-  height: 60px;
+  height: 35px;
   background-color: rgba(255, 255, 255, 0.2);
 }
 
 .item-number {
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 700;
   color: #3c788c;
   line-height: 1;
 }
 
 .item-text h3 {
-  font-size: 28px;
+  /* Aligné sur l'autre section */
+  font-size: 22px;
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 8px;
   color: #ffffff;
 }
 
 .item-text p {
-  font-size: 18px;
+  /* Aligné sur l'autre section */
+  font-size: 15px;
   color: #bebebe;
   line-height: 1.6;
-  max-width: 500px;
+  max-width: 450px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .pour-qui-section .container {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pour-qui-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 }
