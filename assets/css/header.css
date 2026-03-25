@@ -1,0 +1,79 @@
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 30px 40px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent;
+  z-index: 10;
+}
+
+/* Partie gauche : Logo */
+.logo-area {
+  display: flex;
+  align-items: center;
+}
+
+.site-logo {
+  height: 45px;
+  width: auto;
+  display: block;
+  /* Si ton logo est noir et invisible sur le fond sombre, décommente la ligne suivante : */
+  /* filter: invert(1); */
+}
+
+/* Partie droite : Menu + Bouton */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.main-nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 35px;
+}
+
+.main-nav a {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1;
+  transition: opacity 0.2s;
+}
+
+.main-nav a:hover {
+  opacity: 0.7;
+}
+
+.btn-contact,
+.btn-contact:visited {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: #000000 !important;
+  padding: 14px 28px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  line-height: 1;
+  transition: background-color 0.2s ease;
+}
+
+.btn-contact:hover {
+  background-color: #e5b669;
+}

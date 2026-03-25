@@ -1,0 +1,65 @@
+document.addEventListener("DOMContentLoaded", function () {
+  // Injection des données dans le HTML
+  document.getElementById("map-adresse").innerHTML =
+    mapConfig.rue + "<br>" + mapConfig.cp_ville;
+  document.getElementById("map-gare").textContent = mapConfig.gare;
+  document.getElementById("map-parking").textContent = mapConfig.parking;
+
+  const emailEl = document.getElementById("map-email");
+  emailEl.textContent = mapConfig.email;
+  emailEl.href = "mailto:" + mapConfig.email;
+
+  const telEl = document.getElementById("map-telephone");
+  telEl.textContent = mapConfig.telephone;
+  telEl.href = "tel:" + mapConfig.telephone.replace(/\s/g, "");
+
+  // Géocodage Nominatim
+  fetch(
+    `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(mapConfig.adresse)}&format=json&limit=1`,
+    {
+      headers: {
+        "Accept-Language": "fr",
+        "User-Agent": "CultureMouvement/1.0",
+      },
+    },
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      if (!data.length) {
+        console.warn("Adresse introuvable :", mapConfig.adresse);
+        return;
+      }
+
+      const lat = parseFloat(data[0].lat);
+      const lng = parseFloat(data[0].lon);
+
+      const map = L.map("leaflet-map", {
+        center: [lat, lng],
+        zoom: 15,
+        scrollWheelZoom: false,
+      });
+
+      L.tileLayer(
+        "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png",
+        {
+          attribution:
+            '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+          maxZoom: 20,
+        },
+      ).addTo(map);
+
+      const goldIcon = L.divIcon({
+        className: "map-custom-marker",
+        html: '<div class="marker-pin"></div>',
+        iconSize: [0, 0], // Taille nulle pour ne pas interférer
+        iconAnchor: [0, 0], // Ancre au centre exact du point GPS
+        popupAnchor: [0, -15], // La popup s'ouvre 15px au-dessus du centre du point
+      });
+
+      L.marker([lat, lng], { icon: goldIcon })
+        .addTo(map)
+        .bindPopup("<strong>" + mapConfig.nom + "</strong>")
+        .openPopup();
+    })
+    .catch((err) => console.error("Erreur géocodage :", err));
+});

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 /**
  * The template for displaying the footer
@@ -32,3 +33,10 @@
 
 </body>
 </html>
+=======
+<?php get_template_part('components/footer'); ?>
+<?php wp_footer(); ?>
+</body>
+
+</html>
+>>>>>>> style

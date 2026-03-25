@@ -1,0 +1,212 @@
+.contact-section {
+  background-color: #ffffff;
+  padding: 0px 0px 80px;
+  min-height: 80vh;
+}
+
+.container-contact {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Titre et Trait noir */
+.contact-header {
+  border-bottom: 2px solid #000000;
+  margin-bottom: 50px;
+  padding-bottom: 15px;
+}
+
+.contact-title {
+  font-size: 45px;
+  font-weight: 800;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.contact-title span {
+  color: #c9a84c;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 0; /* Collé comme la Map */
+  border: 1px solid #e0e0e0;
+}
+
+/* Infos de contact (Gauche - Sombre) */
+.contact-infos {
+  background-color: #05141a;
+  padding: 50px 40px;
+  color: #ffffff;
+}
+
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s;
+}
+
+.contact-info-item:hover {
+  transform: translateX(5px);
+}
+
+.contact-info-icon {
+  font-size: 20px;
+  background: rgba(201, 168, 76, 0.1);
+  border-radius: 4px;
+
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-info-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: #c9a84c;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.contact-info-value {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* Formulaire (Droite - Clair) */
+.contact-form-wrapper {
+  background-color: #ffffff;
+  padding: 50px 40px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.contact-field input,
+.contact-field textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  background-color: #f9f9f9;
+  font-family: inherit;
+}
+
+.contact-submit {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.contact-submit:hover {
+  background-color: #c9a84c;
+}
+
+/* Social */
+.contact-social {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-social-title {
+  font-size: 11px;
+  color: #c9a84c;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.contact-social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.contact-social-btn {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* ── Inversion Header Page Contact ── */
+
+/* 1. Le fond du header */
+.page-template-page-contact .site-header {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* 3. Les liens de navigation uniquement */
+.page-template-page-contact .main-nav ul li a {
+  color: #000000 !important;
+}
+
+.page-template-page-contact .main-nav ul li a:hover {
+  color: #c9a84c !important;
+}
+
+/* 4. Le bouton Contact (on garde le style bouton noir/texte blanc) */
+.page-template-page-contact .btn-contact {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.page-template-page-contact .btn-contact:hover {
+  background-color: #c9a84c !important;
+  color: #000000 !important;
+}
+
+/* NOUVEAU : Style pour les icônes SVG sociales */
+.contact-social-btn svg {
+  width: 20px;
+  height: 20px;
+  color: #ffffff;
+  transition:
+    transform 0.2s,
+    color 0.2s;
+}
+
+.contact-social-btn:hover svg {
+  color: #c9a84c;
+  transform: translateY(-3px); /* Petit saut vers le haut */
+}
+
+@media (max-width: 992px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .container-contact {
+    padding: 0 40px;
+  }
+}
