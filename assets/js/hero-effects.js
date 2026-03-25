@@ -25,9 +25,9 @@ function updateHero() {
   if (uiRight)
     uiRight.style.transform = `translate(${currentX / 80}px, ${currentY / 80}px)`;
   if (girl)
-    girl.style.transform = `translate(${currentX / 55}px, ${currentY / 55}px)`;
+    girl.style.transform = `translate(${currentX / 35}px, ${currentY / 35}px)`;
   if (canvas)
-    canvas.style.transform = `translate(${currentX / 55}px, ${currentY / 55}px)`;
+    canvas.style.transform = `translate(${currentX / 35}px, ${currentY / 35}px)`;
 
   if (canvas) {
     const ctx = canvas.getContext("2d");

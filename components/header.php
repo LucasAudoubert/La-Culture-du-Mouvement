@@ -13,6 +13,6 @@
                 <li><a href="#localisation">LOCALISATION</a></li>
             </ul>
         </nav>
-        <a href="#contact" class="btn-contact">CONTACT</a>
+        <a href="/contact" class="btn-contact">CONTACT</a>
     </div>
 </header>

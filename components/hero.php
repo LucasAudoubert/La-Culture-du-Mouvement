@@ -14,8 +14,7 @@ if ($hero_query->have_posts()) :
         $title     = get_field('hero_title') ?: 'Bouger mieux.<br>Durer<br>longtemps.';
         $desc      = get_field('hero_description') ?: 'Une approche neuro-fonctionnelle...';
         $cta_text  = get_field('hero_cta_text') ?: 'PRENDRE RENDEZ-VOUS';
-        $cta_link  = get_field('hero_cta_link') ?: '#rendez-vous';
-        // Ici on utilise ton nouveau fond sans la fille
+        $cta_link  = '/contact';  // get_field('hero_cta_link') ?: 
         $bg_url    = get_template_directory_uri() . '/assets/img/fond-parralax-girl.png';
         $loc_value = get_field('hero_loc_value') ?: 'Nanterre (92)';
 ?>

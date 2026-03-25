@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   var calendarEl = document.getElementById("calendar-design");
 
-  // Stoppe le script si on n'est pas sur la bonne page
   if (!calendarEl) {
     return;
   }
@@ -9,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var calendar = new FullCalendar.Calendar(calendarEl, {
     initialView: "dayGridMonth",
     locale: "fr",
-    height: "100%",
+    height: "auto",
     headerToolbar: {
       left: "title prev,next",
       center: "",
@@ -34,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
       meridiem: false,
     },
     events: {
-      url: hexfitData.ajaxUrl, // Variable récupérée depuis functions.php
+      url: hexfitData.ajaxUrl,
       format: "ics",
     },
   });

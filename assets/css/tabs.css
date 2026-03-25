@@ -1,0 +1,77 @@
+.tabs-section {
+  background-color: #ffffff;
+  padding-top: 150px;
+}
+
+.container-tabs {
+  max-width: 1040px; /* Ton rail habituel */
+  margin: 0 auto;
+}
+
+.tabs-nav {
+  display: flex;
+  gap: 0;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #000;
+  position: relative;
+}
+
+.tab-btn {
+  background: #f4f4f4;
+  border: none;
+  padding: 15px 40px;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #888;
+  position: relative;
+  top: 2px; /* Pour se superposer à la bordure de .tabs-nav */
+}
+
+.tab-btn.active {
+  background: #000;
+  color: #fff;
+}
+
+/* CORRECTIF : Pseudo-élément pour "couper" la ligne noire sous l'onglet actif */
+.tab-btn.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px; /* Sur la bordure noire */
+  left: 0;
+  width: 100%;
+  background-color: #000; /* Fond noir pour l'onglet noir */
+}
+
+/* Si tu cliques sur Contact (onglet clair), la coupe doit être blanche */
+.tab-btn.active#tab-btn-contact::after {
+  background-color: #ffffff;
+}
+
+.tab-btn:not(.active):hover {
+  background: #e0e0e0;
+  color: #000;
+}
+
+/* Gestion de l'affichage */
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
