@@ -1,0 +1,58 @@
+.site-footer {
+  position: relative;
+  z-index: 20;
+  background-color: #021f24;
+  padding: 40px 0; /* Padding identique haut/bas pour l'équilibre */
+  width: 100%;
+}
+
+.footer-container {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Aligne les blocs sur l'axe vertical */
+}
+
+.copyright {
+  font-size: 12px;
+  color: #667577;
+  margin: 0; /* Supprime la marge par défaut qui décale tout */
+  line-height: 1; /* Évite les surplus d'espace sous le texte */
+}
+
+.social-links {
+  display: flex;
+  align-items: center; /* Aligne les icônes entre elles */
+  gap: 20px;
+}
+
+.social-links a {
+  display: flex; /* Force le lien à la taille de l'icône */
+  align-items: center;
+  justify-content: center;
+  line-height: 0; /* Supprime l'espace réservé au texte sous l'icône */
+}
+
+.social-links svg {
+  width: 18px;
+  height: 18px;
+  color: #667577;
+  display: block; /* Supprime le comportement inline qui crée un gap en bas */
+  transition:
+    color 0.2s,
+    transform 0.2s;
+}
+
+.social-links a:hover svg {
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}

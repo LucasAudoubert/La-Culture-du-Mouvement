@@ -1,0 +1,139 @@
+.approach-section {
+  background-color: #ffffff;
+  /* Réduction de l'espacement haut/bas */
+  padding: 80px 0;
+  color: #000000;
+  position: relative;
+  z-index: 10;
+}
+
+.approach-section .container {
+  /* Conteneur plus étroit pour décoller des bords */
+  max-width: 1200px;
+  margin: 0 auto;
+  /* Plus de marge sur les côtés */
+  padding: 0 80px;
+}
+
+.section-title {
+  /* Taille réduite pour le côté compact */
+  font-size: 45px;
+  font-weight: 800;
+  margin-bottom: 50px;
+  border-bottom: 2px solid #000;
+  display: flex;
+  align-items: baseline;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.section-title .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #e5b669;
+  border-radius: 50%;
+  margin-left: 12px;
+  transform: translateY(-4px);
+}
+
+.cards-container {
+  display: flex;
+  gap: 20px; /* Gap réduit */
+  justify-content: space-between;
+}
+
+.approach-card {
+  flex: 1;
+  /* Padding interne réduit pour rétrécir la carte */
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  /* Hauteur minimale réduite */
+  min-height: 420px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.approach-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Couleurs des cartes inchangées */
+.card-light {
+  background-color: #f0f5f7;
+  color: #000;
+}
+.card-dark {
+  background-color: #0a1d22;
+  color: #fff;
+}
+.card-teal {
+  background-color: #3c788c;
+  color: #fff;
+}
+
+.approach-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.approach-card .subtitle {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-bottom: 30px; /* Espacement réduit */
+  display: block;
+}
+
+.approach-card .line {
+  width: 50px;
+  height: 3px;
+  margin-bottom: 25px;
+}
+
+.card-light .line {
+  background-color: #3c788c;
+}
+.card-dark .line {
+  background-color: #e5b669;
+}
+.card-teal .line {
+  background-color: #ffffff;
+}
+
+.approach-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 260px;
+}
+
+.card-icon {
+  height: 50px; /* Icônes plus petites */
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.card-icon img {
+  height: 100%;
+  width: auto;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .approach-section .container {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards-container {
+    flex-direction: column;
+  }
+  .approach-card {
+    min-height: auto;
+  }
+}
