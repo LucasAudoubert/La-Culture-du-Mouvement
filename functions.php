@@ -1,4 +1,5 @@
 <?php
+
 /**
  * culture_mouvement functions and definitions
  */
