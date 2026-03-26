@@ -37,6 +37,24 @@ function culture_mouvement_all_assets()
     // --- SCRIPTS JS GLOBAUX ---
     // wp_enqueue_script('main-js', $uri . '/assets/js/main.js', array(), _S_VERSION, true);
 
+        if (is_page_template('page-blog.php') || is_single()) {
+            wp_enqueue_style('blog-style', get_template_directory_uri() . '/assets/css/blog.css');
+        }
+
+        // Leaflet & Map
+        wp_enqueue_style('leaflet-css', 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css', array(), '1.9.4');
+        wp_enqueue_script('leaflet-js', 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js', array(), '1.9.4', true);
+        wp_enqueue_script('map-init', $uri . '/assets/js/map-init.js', array('leaflet-js'), '1.0', true);
+        wp_localize_script('map-init', 'mapConfig', array(
+            'nom'       => 'Culture Mouvement',
+            'adresse'   => '15 Rue de l\'Industrie, 92000 Nanterre',
+            'rue'       => '15 Rue de l\'Industrie',
+            'cp_ville'  => '92000 Nanterre',
+            'gare'      => 'RER A - Nanterre Ville (5 min)',
+            'parking'   => 'Gratuit dans la rue',
+            'email'     => 'contact@culturemouvement.fr',
+            'telephone' => '01 47 21 00 00'
+        ));
     // Hero Effects (uniquement Home)
     if (is_front_page()) {
         wp_enqueue_script('hero-effects', $uri . '/assets/js/hero-effects.js', array(), null, true);
