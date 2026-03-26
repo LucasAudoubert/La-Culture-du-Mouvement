@@ -33,6 +33,10 @@
             wp_enqueue_script('hero-effects', $uri . '/assets/js/hero-effects.js', array(), null, true);
         }
 
+        if (is_page_template('page-blog.php') || is_single()) {
+            wp_enqueue_style('blog-style', get_template_directory_uri() . '/assets/css/blog.css');
+        }
+
         // Leaflet & Map
         wp_enqueue_style('leaflet-css', 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css', array(), '1.9.4');
         wp_enqueue_script('leaflet-js', 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js', array(), '1.9.4', true);

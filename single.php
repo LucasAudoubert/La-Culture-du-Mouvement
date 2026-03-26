@@ -1,40 +1,76 @@
 <?php
-/**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package culture_mouvement
- */
-
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<main class="site-main">
+	<article class="single-post-section">
+		<div class="container-single">
+			<a href="<?php echo home_url('/blog/'); ?>" class="back-to-blog">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<line x1="19" y1="12" x2="5" y2="12"></line>
+					<polyline points="12 19 5 12 12 5"></polyline>
+				</svg>
+				Retour au blog
+			</a>
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-			get_template_part( 'template-parts/content', get_post_type() );
+					<div class="single-header">
+						<span class="blog-date"><?php echo get_the_date(); ?></span>
+						<h1 class="single-title"><?php the_title(); ?></h1>
+					</div>
 
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'culture_mouvement' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'culture_mouvement' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
+					<?php if (has_post_thumbnail()) { ?>
+						<div class="single-thumbnail">
+							<?php the_post_thumbnail('full'); ?>
+						</div>
+					<?php } ?>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+					<div class="single-content">
+						<?php the_content(); ?>
+					</div>
 
-		endwhile; // End of the loop.
-		?>
+			<?php endwhile;
+			endif; ?>
+		</div>
+	</article>
 
-	</main><!-- #main -->
+	<section class="other-blogs-section">
+		<div class="container-blog">
+			<h3 class="other-blogs-title">D'autres articles</h3>
+			<div class="other-blogs-grid">
+				<?php
+				$current_post_id = get_the_ID();
+				$other_args = array(
+					'post_type'      => 'post',
+					'posts_per_page' => 3,
+					'post__not_in'   => array($current_post_id),
+				);
+				$other_query = new WP_Query($other_args);
 
-<?php
-get_sidebar();
-get_footer();
+				if ($other_query->have_posts()) :
+					while ($other_query->have_posts()) : $other_query->the_post(); ?>
+						<a href="<?php the_permalink(); ?>" class="other-blog-card">
+							<div class="other-blog-thumb">
+								<?php if (has_post_thumbnail()) {
+									the_post_thumbnail('medium');
+								} else {
+									echo '<div class="placeholder-img"></div>';
+								} ?>
+							</div>
+							<div class="other-blog-info">
+								<span class="other-blog-date"><?php echo get_the_date(); ?></span>
+								<h4 class="other-blog-title"><?php the_title(); ?></h4>
+							</div>
+						</a>
+					<?php endwhile;
+				else : ?>
+					<p>Aucun autre article disponible.</p>
+				<?php endif;
+				wp_reset_postdata(); ?>
+			</div>
+		</div>
+	</section>
+</main>
+
+<?php get_footer(); ?>
