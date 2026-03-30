@@ -1,0 +1,24 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const wrapper = document.getElementById("slider-wrapper");
+  const slides = document.querySelectorAll(".hero-slide");
+  const dots = document.querySelectorAll("#hero-blog-slider .dot");
+
+  // On vérifie que le slider existe sur la page avant de lancer le code
+  if (!wrapper || slides.length <= 1) return;
+
+  let currentSlide = 0;
+
+  setInterval(() => {
+    // Calcul du prochain slide
+    currentSlide = (currentSlide + 1) % slides.length;
+
+    // Déplacement du wrapper
+    wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+    // Mise à jour de la couleur des points
+    dots.forEach((dot) => dot.classList.remove("active"));
+    if (dots[currentSlide]) {
+      dots[currentSlide].classList.add("active");
+    }
+  }, 2000);
+});

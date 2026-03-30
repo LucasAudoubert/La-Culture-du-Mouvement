@@ -1,9 +1,6 @@
-/* ==========================================================================
-   STRUCTURE GLOBALE (MODE CLAIR)
-   ========================================================================== */
 .blog-section,
 .single-post-section {
-  padding: 80px 0;
+  padding: 150px 0px 80px;
   min-height: 80vh;
   background-color: #ffffff;
   color: #111111;
@@ -50,7 +47,7 @@
   background-color: #ffffff;
   border: 1px solid #e0e0e0;
   border-left: 3px solid #c9a84c;
-  height: 300px;
+  min-height: 300px;
   transition:
     transform 0.2s,
     box-shadow 0.2s;
@@ -64,10 +61,15 @@
 
 .blog-thumb {
   width: 40%;
-  height: 100%;
   flex-shrink: 0;
+  display: flex;
   background: #f0f0f0;
   overflow: hidden;
+}
+
+.blog-thumb a {
+  width: 100%;
+  display: flex; /* Permet à l'image enfant de remplir l'espace */
 }
 
 .blog-thumb img {
@@ -125,13 +127,18 @@
   color: #666666;
   margin-bottom: 25px;
   line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.blog-read-more {
+.blog-read-more,
+.blog-read-more:visited {
   display: inline-block;
   align-self: flex-start;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #000000 !important;
+  color: #ffffff !important;
   padding: 12px 25px;
   font-size: 11px;
   font-weight: 700;
@@ -343,6 +350,45 @@
   margin: 0;
   line-height: 1.4;
   text-transform: uppercase;
+}
+
+/* ── Inversion Header Page Blog & Article Seul ── */
+
+/* 1. Le fond du header */
+.page-template-page-blog .site-header,
+.blog .site-header,
+.single-post .site-header {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* 2. Les liens de navigation */
+.page-template-page-blog .main-nav ul li a,
+.blog .main-nav ul li a,
+.single-post .main-nav ul li a {
+  color: #000000 !important;
+}
+
+.page-template-page-blog .main-nav ul li a:hover,
+.blog .main-nav ul li a:hover,
+.single-post .main-nav ul li a:hover {
+  color: #c9a84c !important;
+}
+
+/* 3. Le bouton Contact (on garde le style bouton noir/texte blanc) */
+.page-template-page-blog .btn-contact,
+.blog .btn-contact,
+.single-post .btn-contact {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.page-template-page-blog .btn-contact:hover,
+.blog .btn-contact:hover,
+.single-post .btn-contact:hover {
+  background-color: #c9a84c !important;
+  color: #000000 !important;
 }
 
 /* ==========================================================================
