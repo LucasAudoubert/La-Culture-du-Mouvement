@@ -1,7 +1,7 @@
 culture_mouvement
 
 plugins:
-    resend
+    Send Emails with Resend
     code snippets
     custom post type UI 
     ICS Calendar
