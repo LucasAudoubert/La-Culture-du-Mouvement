@@ -42,11 +42,7 @@
   flex-direction: row;
   background-color: #ffffff;
   border: 1px solid #e0e0e0;
-<<<<<<< style
   border-left: 3px solid #bdd68f;
-=======
-  border-left: 3px solid #c9a84c;
->>>>>>> main
   min-height: 300px;
   transition:
     transform 0.2s,
@@ -69,11 +65,7 @@
 
 .blog-thumb a {
   width: 100%;
-<<<<<<< style
   display: flex;
-=======
-  display: flex; /* Permet à l'image enfant de remplir l'espace */
->>>>>>> main
 }
 
 .blog-thumb img {
@@ -349,12 +341,6 @@
   text-transform: uppercase;
 }
 
-<<<<<<< style
-=======
-/* ── Inversion Header Page Blog & Article Seul ── */
-
-/* 1. Le fond du header */
->>>>>>> main
 .page-template-page-blog .site-header,
 .blog .site-header,
 .single-post .site-header {
@@ -362,10 +348,6 @@
   border-bottom: 1px solid #e0e0e0;
 }
 
-<<<<<<< style
-=======
-/* 2. Les liens de navigation */
->>>>>>> main
 .page-template-page-blog .main-nav ul li a,
 .blog .main-nav ul li a,
 .single-post .main-nav ul li a {
@@ -375,16 +357,9 @@
 .page-template-page-blog .main-nav ul li a:hover,
 .blog .main-nav ul li a:hover,
 .single-post .main-nav ul li a:hover {
-<<<<<<< style
   color: #bdd68f !important;
 }
 
-=======
-  color: #c9a84c !important;
-}
-
-/* 3. Le bouton Contact (on garde le style bouton noir/texte blanc) */
->>>>>>> main
 .page-template-page-blog .btn-contact,
 .blog .btn-contact,
 .single-post .btn-contact {
@@ -396,20 +371,10 @@
 .page-template-page-blog .btn-contact:hover,
 .blog .btn-contact:hover,
 .single-post .btn-contact:hover {
-<<<<<<< style
   background-color: #bdd68f !important;
   color: #000000 !important;
 }
 
-=======
-  background-color: #c9a84c !important;
-  color: #000000 !important;
-}
-
-/* ==========================================================================
-   RESPONSIVE
-   ========================================================================== */
->>>>>>> main
 @media (max-width: 768px) {
   .blog-section,
   .single-post-section {
