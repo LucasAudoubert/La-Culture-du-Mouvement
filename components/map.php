@@ -8,7 +8,7 @@
 
 <section id="localisation" class="home-section">
     <div class="container-localisation">
-        <h2 class="section-title-map">Où se déroulent les séances ?</h2>
+        <h2 class="section-title-map">Localisation</h2>
 
         <div class="map-wrapper">
 
@@ -17,6 +17,7 @@
                 <div class="map-info-block">
                     <span class="map-label">Adresse du local</span>
                     <address id="map-adresse">
+                        <!-- ✅ Rempli automatiquement par JS -->
                     </address>
                 </div>
 

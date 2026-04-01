@@ -12,9 +12,11 @@ if ($hero_query->have_posts()) :
 
         $tag       = get_field('hero_tag') ?: 'NEUROLOGIE & PERFORMANCE';
         $title     = get_field('hero_title') ?: 'Bouger mieux.<br>Durer longtemps.';
-        $desc      = get_field('hero_description') ?: 'Un accompagnement personnalisé pour développer un corps plus capable, réduire les douleurs et progresser à votre rythme, en toute sécurité.';
+        $desc      = get_field('hero_description') ?: 'Une approche neuro-fonctionnelle...';
         $cta_text  = get_field('hero_cta_text') ?: 'PRENDRE RENDEZ-VOUS';
         $cta_link  = get_field('hero_cta_link') ?: '/contact';
+
+        // Logique pour l'image de fond et l'image par défaut
         $bg_image = get_field('hero_bg');
         $has_custom_bg = false;
 
@@ -25,7 +27,7 @@ if ($hero_query->have_posts()) :
             $bg_url = $bg_image;
             $has_custom_bg = true;
         } else {
-            $bg_url = get_template_directory_uri() . '/assets/img/fond-parralax-girl.webp';
+            $bg_url = get_template_directory_uri() . '/assets/img/fond-parralax-girl.png';
         }
 
         $loc_value = get_field('hero_loc_value') ?: 'Nanterre (92)';
@@ -35,7 +37,7 @@ if ($hero_query->have_posts()) :
 
             <?php
             if (!$has_custom_bg) : ?>
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/parallax-girl.webp" class="hero-parallax-girl" alt="">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/parallax-girl.png" class="hero-parallax-girl" alt="">
             <?php endif; ?>
 
             <canvas id="hero-canvas"></canvas>
@@ -64,6 +66,7 @@ if ($hero_query->have_posts()) :
                     <div class="video-placeholder" id="hero-blog-slider" style="overflow: hidden; position: relative;">
                         <div class="slider-wrapper" id="slider-wrapper" style="display: flex; height: 100%; transition: transform 0.5s ease-in-out;">
                             <?php
+                            // Requête pour les 3 derniers articles
                             $slider_args = array('post_type' => 'post', 'posts_per_page' => 3);
                             $slider_query = new WP_Query($slider_args);
                             $post_count = $slider_query->post_count;

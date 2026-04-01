@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
 
+      // CORRECTIF : Si on clique sur l'onglet planning, on force le recalcul
       if (target === "tab-calendar") {
         window.dispatchEvent(new Event("resize"));
       }

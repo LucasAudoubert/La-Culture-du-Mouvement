@@ -1,11 +1,3 @@
-html,
-body {
-  overflow-x: hidden;
-}
-body.no-scroll {
-  overflow: hidden;
-}
-
 .site-header {
   display: flex;
   justify-content: space-between;
@@ -14,7 +6,8 @@ body.no-scroll {
   padding: 30px 40px;
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: transparent;
   z-index: 10;
 }
@@ -26,11 +19,14 @@ body.no-scroll {
 }
 
 .site-logo {
-  height: 65px;
+  height: 45px;
   width: auto;
   display: block;
+  /* Si ton logo est noir et invisible sur le fond sombre, décommente la ligne suivante : */
+  /* filter: invert(1); */
 }
 
+/* Partie droite : Menu + Bouton */
 .header-right {
   display: flex;
   align-items: center;
@@ -79,96 +75,5 @@ body.no-scroll {
 }
 
 .btn-contact:hover {
-  background-color: #bdd68f;
-}
-
-/*responsive*/
-.burger-menu {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  z-index: 1000;
-}
-
-.burger-menu.active {
-  position: fixed;
-  top: 30px;
-  right: 40px;
-}
-
-.burger-menu span {
-  width: 25px;
-  height: 2px;
-  background-color: #ffffff;
-  transition: all 0.3s ease;
-  transform-origin: center;
-}
-
-.page-template-page-blog .burger-menu span,
-.blog .burger-menu span,
-.single-post .burger-menu span {
-  background-color: #000000;
-}
-
-@media (max-width: 768px) {
-  .site-header {
-    z-index: 999;
-    padding: 20px 20px 0px 0px;
-  }
-
-  .burger-menu {
-    display: flex;
-    z-index: 100;
-  }
-
-  .burger-menu span {
-    background-color: #ffffff !important;
-  }
-
-  .header-right {
-    position: fixed;
-    top: 0;
-    right: 0;
-    transform: translateX(100%);
-    width: 100vw;
-    height: 100vh;
-    background-color: #021f24;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.4s ease;
-    z-index: 99;
-  }
-
-  .header-right.active {
-    transform: translateX(0);
-  }
-  .main-nav ul {
-    flex-direction: column;
-    gap: 40px;
-    text-align: center;
-    margin-bottom: 40px;
-  }
-
-  .main-nav a {
-    font-size: 20px;
-    color: #ffffff !important;
-  }
-
-  .btn-contact {
-    padding: 15px 30px;
-    font-size: 16px;
-  }
-
-  .burger-menu.active span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-  }
-  .burger-menu.active span:nth-child(2) {
-    opacity: 0;
-  }
-  .burger-menu.active span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-  }
+  background-color: #e5b669;
 }

@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   gap: 80px;
-  max-width: 1040px;
+  max-width: 1040px; /* Aligné sur ton rail de 1040px */
   margin: 0 auto;
 }
 
@@ -36,8 +36,8 @@
   right: -25px;
   width: 100px;
   height: 100px;
-  border-bottom: 4px solid #bdd68f;
-  border-right: 4px solid #bdd68f;
+  border-bottom: 4px solid #e5b669;
+  border-right: 4px solid #e5b669;
   z-index: 3;
 }
 

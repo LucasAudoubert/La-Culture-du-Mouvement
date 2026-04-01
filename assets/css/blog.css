@@ -13,6 +13,7 @@
   padding: 0;
 }
 
+/* --- En-tête du blog (Liste) --- */
 .blog-header {
   border-bottom: 2px solid #000000;
   margin-bottom: 50px;
@@ -28,9 +29,12 @@
 }
 
 .blog-title span {
-  color: #bdd68f;
+  color: #c9a84c;
 }
 
+/* ==========================================================================
+   LA LISTE D'ARTICLES (page-blog.php)
+   ========================================================================== */
 .blog-list {
   display: flex;
   flex-direction: column;
@@ -42,11 +46,7 @@
   flex-direction: row;
   background-color: #ffffff;
   border: 1px solid #e0e0e0;
-<<<<<<< style
-  border-left: 3px solid #bdd68f;
-=======
   border-left: 3px solid #c9a84c;
->>>>>>> main
   min-height: 300px;
   transition:
     transform 0.2s,
@@ -69,11 +69,7 @@
 
 .blog-thumb a {
   width: 100%;
-<<<<<<< style
-  display: flex;
-=======
   display: flex; /* Permet à l'image enfant de remplir l'espace */
->>>>>>> main
 }
 
 .blog-thumb img {
@@ -104,7 +100,7 @@
 .blog-date {
   font-size: 11px;
   font-weight: 700;
-  color: #bdd68f;
+  color: #c9a84c;
   text-transform: uppercase;
   margin-bottom: 10px;
 }
@@ -123,7 +119,7 @@
 }
 
 .blog-post-title a:hover {
-  color: #bdd68f;
+  color: #c9a84c;
 }
 
 .blog-excerpt {
@@ -154,11 +150,12 @@
 }
 
 .blog-read-more:hover {
-  background-color: #bdd68f;
-  border-color: #bdd68f;
+  background-color: #c9a84c;
+  border-color: #c9a84c;
   color: #ffffff;
 }
 
+/* Pagination */
 .blog-pagination {
   margin-top: 50px;
   text-align: center;
@@ -182,11 +179,14 @@
 }
 
 .blog-pagination a.page-numbers:hover {
-  background: #bdd68f;
-  border-color: #bdd68f;
+  background: #c9a84c;
+  border-color: #c9a84c;
   color: #ffffff;
 }
 
+/* ==========================================================================
+   L'ARTICLE SEUL (single.php)
+   ========================================================================== */
 .single-header {
   text-align: center;
   margin-bottom: 50px;
@@ -228,7 +228,7 @@
 
 .single-content h2,
 .single-content h3 {
-  color: #bdd68f;
+  color: #c9a84c;
   text-transform: uppercase;
   font-weight: 800;
   margin-top: 40px;
@@ -236,7 +236,7 @@
 }
 
 .single-content a {
-  color: #bdd68f;
+  color: #c9a84c;
   text-decoration: underline;
 }
 
@@ -246,11 +246,14 @@
   margin-left: 20px;
 }
 
+/* ==========================================================================
+   BOUTON RETOUR & AUTRES ARTICLES (single.php)
+   ========================================================================== */
 .back-to-blog {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: #bdd68f;
+  color: #c9a84c;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 12px;
@@ -305,7 +308,7 @@
 
 .other-blog-card:hover {
   transform: translateY(-5px);
-  border-color: #bdd68f;
+  border-color: #c9a84c;
 }
 
 .other-blog-thumb {
@@ -334,7 +337,7 @@
 
 .other-blog-date {
   font-size: 10px;
-  color: #bdd68f;
+  color: #c9a84c;
   text-transform: uppercase;
   margin-bottom: 8px;
   font-weight: 700;
@@ -349,12 +352,9 @@
   text-transform: uppercase;
 }
 
-<<<<<<< style
-=======
 /* ── Inversion Header Page Blog & Article Seul ── */
 
 /* 1. Le fond du header */
->>>>>>> main
 .page-template-page-blog .site-header,
 .blog .site-header,
 .single-post .site-header {
@@ -362,10 +362,7 @@
   border-bottom: 1px solid #e0e0e0;
 }
 
-<<<<<<< style
-=======
 /* 2. Les liens de navigation */
->>>>>>> main
 .page-template-page-blog .main-nav ul li a,
 .blog .main-nav ul li a,
 .single-post .main-nav ul li a {
@@ -375,16 +372,10 @@
 .page-template-page-blog .main-nav ul li a:hover,
 .blog .main-nav ul li a:hover,
 .single-post .main-nav ul li a:hover {
-<<<<<<< style
-  color: #bdd68f !important;
-}
-
-=======
   color: #c9a84c !important;
 }
 
 /* 3. Le bouton Contact (on garde le style bouton noir/texte blanc) */
->>>>>>> main
 .page-template-page-blog .btn-contact,
 .blog .btn-contact,
 .single-post .btn-contact {
@@ -396,12 +387,6 @@
 .page-template-page-blog .btn-contact:hover,
 .blog .btn-contact:hover,
 .single-post .btn-contact:hover {
-<<<<<<< style
-  background-color: #bdd68f !important;
-  color: #000000 !important;
-}
-
-=======
   background-color: #c9a84c !important;
   color: #000000 !important;
 }
@@ -409,11 +394,10 @@
 /* ==========================================================================
    RESPONSIVE
    ========================================================================== */
->>>>>>> main
 @media (max-width: 768px) {
   .blog-section,
   .single-post-section {
-    padding: 150px 0px 80px;
+    padding: 60px 0;
   }
 
   .blog-card-horizontal {
@@ -442,28 +426,5 @@
   .container-blog,
   .container-single {
     padding: 0 20px;
-  }
-
-  .page-template-page-blog .header-right.active .main-nav ul li a,
-  .blog .header-right.active .main-nav ul li a,
-  .single-post .header-right.active .main-nav ul li a {
-    color: #ffffff !important;
-  }
-
-  .page-template-page-blog .header-right.active .btn-contact,
-  .blog .header-right.active .btn-contact,
-  .single-post .header-right.active .btn-contact {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-  }
-
-  .page-template-page-blog .burger-menu:not(.active) span,
-  .blog .burger-menu:not(.active) span,
-  .single-post .burger-menu:not(.active) span {
-    background-color: #000000 !important;
-  }
-
-  .burger-menu.active span {
-    background-color: #ffffff !important;
   }
 }

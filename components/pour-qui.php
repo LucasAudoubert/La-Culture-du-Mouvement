@@ -4,7 +4,7 @@
 
             <div class="pour-qui-image-side">
                 <div class="main-image-wrapper">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/fitness.webp" alt="Stretching">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/fitness.jpg" alt="Stretching">
                     <div class="yellow-badge">
                         <span class="percent">100%</span>
                         <span class="text">INDIVIDUALISÉ</span>
@@ -21,15 +21,15 @@
                         <div class="item-number">01.</div>
                         <div class="item-text">
                             <h3>DÉBUTANTS/ RÉHAB</h3>
-                            <p>Reprendre le mouvement en confiance, après une pause, une blessure ou des années de sédentarité, sans vous sentir « en retard »</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dignissim diam sed lorem gravida vestibulum.</p>
                         </div>
                     </div>
 
                     <div class="list-item">
                         <div class="item-number">02.</div>
                         <div class="item-text">
-                            <h3>Athlètes & sportifs réguliers</h3>
-                            <p> Franchir un cap de performance en corrigeant les compensations, en optimisant vos mouvements et en réduisant le risque de blessure à l’entraînement.​</p>
+                            <h3>ATHLÈTE</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dignissim diam sed lorem gravida vestibulum.</p>
                         </div>
                     </div>
                 </div>
