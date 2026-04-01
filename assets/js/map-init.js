@@ -1,21 +1,33 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Injection des données dans le HTML
-  document.getElementById("map-adresse").innerHTML =
-    mapConfig.rue + "<br>" + mapConfig.cp_ville;
-  document.getElementById("map-gare").textContent = mapConfig.gare;
-  document.getElementById("map-parking").textContent = mapConfig.parking;
+  if (!document.getElementById("leaflet-map")) return;
+
+  const adresse = mapConfig.adresse;
+  const nom = mapConfig.nom;
+
+  const adresseEl = document.getElementById("map-adresse");
+  if (adresseEl)
+    adresseEl.innerHTML = mapConfig.rue + "<br>" + mapConfig.cp_ville;
+
+  const gareEl = document.getElementById("map-gare");
+  if (gareEl) gareEl.textContent = mapConfig.gare;
+
+  const parkingEl = document.getElementById("map-parking");
+  if (parkingEl) parkingEl.textContent = mapConfig.parking;
 
   const emailEl = document.getElementById("map-email");
-  emailEl.textContent = mapConfig.email;
-  emailEl.href = "mailto:" + mapConfig.email;
+  if (emailEl) {
+    emailEl.textContent = mapConfig.email;
+    emailEl.href = "mailto:" + mapConfig.email;
+  }
 
   const telEl = document.getElementById("map-telephone");
-  telEl.textContent = mapConfig.telephone;
-  telEl.href = "tel:" + mapConfig.telephone.replace(/\s/g, "");
+  if (telEl) {
+    telEl.textContent = mapConfig.telephone;
+    telEl.href = "tel:" + mapConfig.telephone.replace(/\s/g, "");
+  }
 
-  // Géocodage Nominatim
   fetch(
-    `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(mapConfig.adresse)}&format=json&limit=1`,
+    `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(adresse)}&format=json&limit=1`,
     {
       headers: {
         "Accept-Language": "fr",
@@ -26,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((res) => res.json())
     .then((data) => {
       if (!data.length) {
-        console.warn("Adresse introuvable :", mapConfig.adresse);
+        console.warn("Adresse introuvable :", adresse);
         return;
       }
 
@@ -39,26 +51,22 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollWheelZoom: false,
       });
 
-      L.tileLayer(
-        "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png",
-        {
-          attribution:
-            '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-          maxZoom: 20,
-        },
-      ).addTo(map);
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      }).addTo(map);
 
       const goldIcon = L.divIcon({
         className: "map-custom-marker",
         html: '<div class="marker-pin"></div>',
-        iconSize: [0, 0], // Taille nulle pour ne pas interférer
-        iconAnchor: [0, 0], // Ancre au centre exact du point GPS
-        popupAnchor: [0, -15], // La popup s'ouvre 15px au-dessus du centre du point
+        iconSize: [14, 14],
+        iconAnchor: [7, 7],
+        popupAnchor: [0, -7],
       });
 
       L.marker([lat, lng], { icon: goldIcon })
         .addTo(map)
-        .bindPopup("<strong>" + mapConfig.nom + "</strong>")
+        .bindPopup("<strong>" + nom + "</strong>")
         .openPopup();
     })
     .catch((err) => console.error("Erreur géocodage :", err));

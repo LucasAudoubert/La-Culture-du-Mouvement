@@ -1,9 +1,6 @@
-/* ==========================================================================
-   STRUCTURE GLOBALE (MODE CLAIR)
-   ========================================================================== */
 .blog-section,
 .single-post-section {
-  padding: 80px 0;
+  padding: 150px 0px 80px;
   min-height: 80vh;
   background-color: #ffffff;
   color: #111111;
@@ -16,7 +13,6 @@
   padding: 0;
 }
 
-/* --- En-tête du blog (Liste) --- */
 .blog-header {
   border-bottom: 2px solid #000000;
   margin-bottom: 50px;
@@ -32,12 +28,9 @@
 }
 
 .blog-title span {
-  color: #c9a84c;
+  color: #bdd68f;
 }
 
-/* ==========================================================================
-   LA LISTE D'ARTICLES (page-blog.php)
-   ========================================================================== */
 .blog-list {
   display: flex;
   flex-direction: column;
@@ -49,8 +42,8 @@
   flex-direction: row;
   background-color: #ffffff;
   border: 1px solid #e0e0e0;
-  border-left: 3px solid #c9a84c;
-  height: 300px;
+  border-left: 3px solid #bdd68f;
+  min-height: 300px;
   transition:
     transform 0.2s,
     box-shadow 0.2s;
@@ -64,10 +57,15 @@
 
 .blog-thumb {
   width: 40%;
-  height: 100%;
   flex-shrink: 0;
+  display: flex;
   background: #f0f0f0;
   overflow: hidden;
+}
+
+.blog-thumb a {
+  width: 100%;
+  display: flex;
 }
 
 .blog-thumb img {
@@ -98,7 +96,7 @@
 .blog-date {
   font-size: 11px;
   font-weight: 700;
-  color: #c9a84c;
+  color: #bdd68f;
   text-transform: uppercase;
   margin-bottom: 10px;
 }
@@ -117,7 +115,7 @@
 }
 
 .blog-post-title a:hover {
-  color: #c9a84c;
+  color: #bdd68f;
 }
 
 .blog-excerpt {
@@ -125,13 +123,18 @@
   color: #666666;
   margin-bottom: 25px;
   line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.blog-read-more {
+.blog-read-more,
+.blog-read-more:visited {
   display: inline-block;
   align-self: flex-start;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #000000 !important;
+  color: #ffffff !important;
   padding: 12px 25px;
   font-size: 11px;
   font-weight: 700;
@@ -143,12 +146,11 @@
 }
 
 .blog-read-more:hover {
-  background-color: #c9a84c;
-  border-color: #c9a84c;
+  background-color: #bdd68f;
+  border-color: #bdd68f;
   color: #ffffff;
 }
 
-/* Pagination */
 .blog-pagination {
   margin-top: 50px;
   text-align: center;
@@ -172,14 +174,11 @@
 }
 
 .blog-pagination a.page-numbers:hover {
-  background: #c9a84c;
-  border-color: #c9a84c;
+  background: #bdd68f;
+  border-color: #bdd68f;
   color: #ffffff;
 }
 
-/* ==========================================================================
-   L'ARTICLE SEUL (single.php)
-   ========================================================================== */
 .single-header {
   text-align: center;
   margin-bottom: 50px;
@@ -221,7 +220,7 @@
 
 .single-content h2,
 .single-content h3 {
-  color: #c9a84c;
+  color: #bdd68f;
   text-transform: uppercase;
   font-weight: 800;
   margin-top: 40px;
@@ -229,7 +228,7 @@
 }
 
 .single-content a {
-  color: #c9a84c;
+  color: #bdd68f;
   text-decoration: underline;
 }
 
@@ -239,14 +238,11 @@
   margin-left: 20px;
 }
 
-/* ==========================================================================
-   BOUTON RETOUR & AUTRES ARTICLES (single.php)
-   ========================================================================== */
 .back-to-blog {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: #c9a84c;
+  color: #bdd68f;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 12px;
@@ -301,7 +297,7 @@
 
 .other-blog-card:hover {
   transform: translateY(-5px);
-  border-color: #c9a84c;
+  border-color: #bdd68f;
 }
 
 .other-blog-thumb {
@@ -330,7 +326,7 @@
 
 .other-blog-date {
   font-size: 10px;
-  color: #c9a84c;
+  color: #bdd68f;
   text-transform: uppercase;
   margin-bottom: 8px;
   font-weight: 700;
@@ -345,13 +341,44 @@
   text-transform: uppercase;
 }
 
-/* ==========================================================================
-   RESPONSIVE
-   ========================================================================== */
+.page-template-page-blog .site-header,
+.blog .site-header,
+.single-post .site-header {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.page-template-page-blog .main-nav ul li a,
+.blog .main-nav ul li a,
+.single-post .main-nav ul li a {
+  color: #000000 !important;
+}
+
+.page-template-page-blog .main-nav ul li a:hover,
+.blog .main-nav ul li a:hover,
+.single-post .main-nav ul li a:hover {
+  color: #bdd68f !important;
+}
+
+.page-template-page-blog .btn-contact,
+.blog .btn-contact,
+.single-post .btn-contact {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.page-template-page-blog .btn-contact:hover,
+.blog .btn-contact:hover,
+.single-post .btn-contact:hover {
+  background-color: #bdd68f !important;
+  color: #000000 !important;
+}
+
 @media (max-width: 768px) {
   .blog-section,
   .single-post-section {
-    padding: 60px 0;
+    padding: 150px 0px 80px;
   }
 
   .blog-card-horizontal {
@@ -380,5 +407,28 @@
   .container-blog,
   .container-single {
     padding: 0 20px;
+  }
+
+  .page-template-page-blog .header-right.active .main-nav ul li a,
+  .blog .header-right.active .main-nav ul li a,
+  .single-post .header-right.active .main-nav ul li a {
+    color: #ffffff !important;
+  }
+
+  .page-template-page-blog .header-right.active .btn-contact,
+  .blog .header-right.active .btn-contact,
+  .single-post .header-right.active .btn-contact {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .page-template-page-blog .burger-menu:not(.active) span,
+  .blog .burger-menu:not(.active) span,
+  .single-post .burger-menu:not(.active) span {
+    background-color: #000000 !important;
+  }
+
+  .burger-menu.active span {
+    background-color: #ffffff !important;
   }
 }

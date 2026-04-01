@@ -10,7 +10,7 @@
                 <h3>NEUROLOGIE</h3>
                 <span class="subtitle">SYSTEME NERVEUX</span>
                 <div class="line"></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dignissim diam sed lorem gravida vestibulum.</p>
+                <p>Reconnexion cerveau / corps, travail des réflexes posturaux et de la coordination pour sécuriser chaque geste.</p>
             </div>
 
             <div class="approach-card card-dark">
@@ -20,7 +20,7 @@
                 <h3>MOBILITÉ</h3>
                 <span class="subtitle">CONTRÔLE MOTEUR</span>
                 <div class="line"></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dignissim diam sed lorem gravida vestibulum.</p>
+                <p>Exercices ciblés pour libérer les amplitudes, améliorer la qualité de mouvement et gagner en fluidité.</p>
             </div>
 
             <div class="approach-card card-teal">
@@ -30,7 +30,7 @@
                 <h3>LONGÉVITÉ</h3>
                 <span class="subtitle">PERFORMANCE DURABLE</span>
                 <div class="line"></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dignissim diam sed lorem gravida vestibulum.</p>
+                <p>Programmation progressive, récupération et hygiène de vie pour continuer à bouger longtemps, sans douleur inutile.</p>
             </div>
         </div>
     </div>
