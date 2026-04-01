@@ -104,6 +104,24 @@ $contact_telephone_href = preg_replace('/\s+/', '', $contact_telephone);
                     <div class="contact-field">
                         <label for="contact-datetime">Date et heure souhaité</label>
                         <input type="datetime-local" id="contact-datetime" name="datetime">
+<<<<<<< style
+                    </div>
+
+                    <div class="contact-field">
+                        <label for="contact-message">
+                            Message *
+                            <span style="font-weight:normal;font-size:0.85em;float:right;">
+                                <span id="contact-char">0</span> caractères
+                            </span>
+                        </label>
+                        <textarea id="contact-message" name="message" rows="6" placeholder="Parlez-nous de votre projet..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="contact-submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m22 2-7 20-4-9-9-4Z" />
+                            <path d="M22 2 11 13" />
+=======
                     </div>
 
                     <div class="contact-field">
@@ -120,6 +138,7 @@ $contact_telephone_href = preg_replace('/\s+/', '', $contact_telephone);
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="m22 2-7 20-4-9-9-4Z"/>
                             <path d="M22 2 11 13"/>
+>>>>>>> main
                         </svg>
                         Envoyer le Message
                     </button>

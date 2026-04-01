@@ -1,6 +1,5 @@
 .approach-section {
   background-color: #ffffff;
-  /* Réduction de l'espacement haut/bas */
   padding: 80px 0;
   color: #000000;
   position: relative;
@@ -8,10 +7,8 @@
 }
 
 .approach-section .container {
-  /* Conteneur plus étroit pour décoller des bords */
   max-width: 1200px;
   margin: 0 auto;
-  /* Plus de marge sur les côtés */
   padding: 0 80px;
 }
 
@@ -30,7 +27,7 @@
   display: inline-block;
   width: 10px;
   height: 10px;
-  background-color: #e5b669;
+  background-color: #bdd68f;
   border-radius: 50%;
   margin-left: 12px;
   transform: translateY(-4px);
@@ -38,17 +35,15 @@
 
 .cards-container {
   display: flex;
-  gap: 20px; /* Gap réduit */
+  gap: 20px;
   justify-content: space-between;
 }
 
 .approach-card {
   flex: 1;
-  /* Padding interne réduit pour rétrécir la carte */
   padding: 40px 30px;
   display: flex;
   flex-direction: column;
-  /* Hauteur minimale réduite */
   min-height: 420px;
   transition:
     transform 0.3s ease,
@@ -60,7 +55,6 @@
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Couleurs des cartes inchangées */
 .card-light {
   background-color: #f0f5f7;
   color: #000;
@@ -83,7 +77,7 @@
 .approach-card .subtitle {
   font-size: 12px;
   opacity: 0.7;
-  margin-bottom: 30px; /* Espacement réduit */
+  margin-bottom: 30px;
   display: block;
 }
 
@@ -97,7 +91,7 @@
   background-color: #3c788c;
 }
 .card-dark .line {
-  background-color: #e5b669;
+  background-color: #bdd68f;
 }
 .card-teal .line {
   background-color: #ffffff;

@@ -59,7 +59,11 @@ if ($approche_query->have_posts()) {
                 <h3><?php echo esc_html($carte1_titre); ?></h3>
                 <span class="subtitle"><?php echo esc_html($carte1_soustitre); ?></span>
                 <div class="line"></div>
+<<<<<<< style
+                <p>Reconnexion cerveau / corps, travail des réflexes posturaux et de la coordination pour sécuriser chaque geste.</p>
+=======
                 <p><?php echo esc_html($carte1_paragraphe); ?></p>
+>>>>>>> main
             </div>
 
             <div class="approach-card card-dark">
@@ -69,7 +73,11 @@ if ($approche_query->have_posts()) {
                 <h3><?php echo esc_html($carte2_titre); ?></h3>
                 <span class="subtitle"><?php echo esc_html($carte2_soustitre); ?></span>
                 <div class="line"></div>
+<<<<<<< style
+                <p>Exercices ciblés pour libérer les amplitudes, améliorer la qualité de mouvement et gagner en fluidité.</p>
+=======
                 <p><?php echo esc_html($carte2_paragraphe); ?></p>
+>>>>>>> main
             </div>
 
             <div class="approach-card card-teal">
@@ -79,7 +87,11 @@ if ($approche_query->have_posts()) {
                 <h3><?php echo esc_html($carte3_titre); ?></h3>
                 <span class="subtitle"><?php echo esc_html($carte3_soustitre); ?></span>
                 <div class="line"></div>
+<<<<<<< style
+                <p>Programmation progressive, récupération et hygiène de vie pour continuer à bouger longtemps, sans douleur inutile.</p>
+=======
                 <p><?php echo esc_html($carte3_paragraphe); ?></p>
+>>>>>>> main
             </div>
         </div>
     </div>

@@ -1,4 +1,3 @@
-// 1. Cache les sélections (On ne cherche les éléments qu'une seule fois)
 const girl = document.querySelector(".hero-parallax-girl");
 const uiLeft = document.querySelector(".hero-content");
 const uiRight = document.querySelector(".hero-visual");
@@ -8,9 +7,8 @@ let targetX = 0,
   targetY = 0;
 let currentX = 0,
   currentY = 0;
-const lerpFactor = 0.08; // Plus c'est bas, plus c'est fluide et "lourd"
+const lerpFactor = 0.08;
 
-// 2. Écouteur ultra-léger (juste pour récupérer les coordonnées)
 document.addEventListener("mousemove", (e) => {
   targetX = window.innerWidth / 2 - e.pageX;
   targetY = window.innerHeight / 2 - e.pageY;
@@ -52,7 +50,6 @@ function updateHero() {
   requestAnimationFrame(updateHero);
 }
 
-// --- Init Particles ---
 let particles = [];
 const particleCount = 600;
 
@@ -75,4 +72,4 @@ function initCanvas() {
 
 window.addEventListener("resize", initCanvas);
 initCanvas();
-updateHero(); // On lance la boucle unique
+updateHero();

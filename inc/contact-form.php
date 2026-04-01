@@ -1,4 +1,31 @@
 <?php
+<<<<<<< style
+if (! defined('ABSPATH')) exit;
+
+add_action('wp_ajax_send_contact',        'handle_contact_form');
+add_action('wp_ajax_nopriv_send_contact', 'handle_contact_form');
+
+function handle_contact_form()
+{
+
+    if (! isset($_POST['nonce']) || ! wp_verify_nonce($_POST['nonce'], 'contact_nonce')) {
+        wp_send_json_error(['message' => 'Requête invalide.']);
+        wp_die();
+    }
+
+    $name     = sanitize_text_field($_POST['name']     ?? '');
+    $email    = sanitize_email($_POST['email']    ?? '');
+    $message  = sanitize_textarea_field($_POST['message']  ?? '');
+    $datetime = sanitize_text_field($_POST['datetime'] ?? '');
+
+    if (empty($name) || empty($email) || empty($message)) {
+        wp_send_json_error(['message' => 'Veuillez remplir tous les champs obligatoires.']);
+        wp_die();
+    }
+
+    if (! is_email($email)) {
+        wp_send_json_error(['message' => 'Adresse email invalide.']);
+=======
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 add_action( 'wp_ajax_send_contact',        'handle_contact_form' );
@@ -23,13 +50,20 @@ function handle_contact_form() {
 
     if ( ! is_email( $email ) ) {
         wp_send_json_error( [ 'message' => 'Adresse email invalide.' ] );
+>>>>>>> main
         wp_die();
     }
 
     // ── Génère le lien Google Calendar ──────────────────────
+<<<<<<< style
+    $date_souhaitee = ! empty($datetime) ? strtotime($datetime) : strtotime('+3 days 10:00:00');
+    $date_debut     = date('Ymd\THis\Z', $date_souhaitee);
+    $date_fin       = date('Ymd\THis\Z', $date_souhaitee + 3600); // +1h
+=======
     $date_souhaitee = ! empty( $datetime ) ? strtotime( $datetime ) : strtotime( '+3 days 10:00:00' );
     $date_debut     = date( 'Ymd\THis\Z', $date_souhaitee );
     $date_fin       = date( 'Ymd\THis\Z', $date_souhaitee + 3600 ); // +1h
+>>>>>>> main
 
     $gcal_url = 'https://calendar.google.com/calendar/render?' . http_build_query([
         'action'   => 'TEMPLATE',
@@ -40,11 +74,19 @@ function handle_contact_form() {
     ]);
 
     // ── Email HTML ───────────────────────────────────────────
+<<<<<<< style
+    $to           = 'anisse.elbezazi@gmail.com';
+    $mail_subject = $name . ' - Nouvelle demande de créneau';
+    $reply_url    = 'mailto:' . esc_attr($email) . '?subject=' . rawurlencode('Re: ' . $mail_subject);
+
+    $html_body = "
+=======
     $to           = 'gabriel.lefebvrefristot@gmail.com';
     $mail_subject = $name . ' - Nouvelle demande de créneau';
     $reply_url    = 'mailto:' . esc_attr( $email ) . '?subject=' . rawurlencode( 'Re: ' . $mail_subject );
 
 $html_body = "
+>>>>>>> main
 <html>
 <head>
     <style>
@@ -90,7 +132,11 @@ $html_body = "
         .btn-gcal {
             display: inline-block;
             padding: 12px 24px;
+<<<<<<< style
+            background: #BDD68F;
+=======
             background: #c9a84c;
+>>>>>>> main
             color: #000 !important;
             text-decoration: none;
             border-radius: 6px;
@@ -111,7 +157,11 @@ $html_body = "
             font-weight: bold;
         }
         .btn-reply:hover {
+<<<<<<< style
+            background: #BDD68F !important;
+=======
             background: #c9a84c !important;
+>>>>>>> main
             color: #000 !important;
         }
         .footer {
@@ -127,32 +177,56 @@ $html_body = "
         <table>
             <tr>
                 <td class='td-label'>Nom</td>
+<<<<<<< style
+                <td class='td-value'>" . esc_html($name) . "</td>
+=======
                 <td class='td-value'>" . esc_html( $name ) . "</td>
+>>>>>>> main
             </tr>
             <tr class='tr-alt'>
                 <td class='td-label'>Email</td>
                 <td class='td-value'>
+<<<<<<< style
+                    <a href='mailto:" . esc_attr($email) . "'>" . esc_html($email) . "</a>
+=======
                     <a href='mailto:" . esc_attr( $email ) . "'>" . esc_html( $email ) . "</a>
+>>>>>>> main
                 </td>
             </tr>
             <tr>
                 <td class='td-label'>Date souhaitée</td>
+<<<<<<< style
+                <td class='td-value'>" . esc_html($datetime) . "</td>
+            </tr>
+        </table>
+        <div class='message-box'>
+            <p>" . esc_html($message) . "</p>
+=======
                 <td class='td-value'>" . esc_html( $datetime ) . "</td>
             </tr>
         </table>
         <div class='message-box'>
             <p>" . esc_html( $message ) . "</p>
+>>>>>>> main
         </div>
             <table class='btn-wrapper'>
                 <tr>
                     <td>
+<<<<<<< style
+                        <a href='" . esc_url($gcal_url) . "' class='btn-gcal'>
+=======
                         <a href='" . esc_url( $gcal_url ) . "' class='btn-gcal'>
+>>>>>>> main
                             Accepter → Google Calendar
                         </a>
                     </td>
                     <td>
                         <a href='" . $reply_url . "' class='btn-reply'>
+<<<<<<< style
+                            Répondre à " . esc_html($name) . "
+=======
                             Répondre à " . esc_html( $name ) . "
+>>>>>>> main
                         </a>
                     </td>
                 </tr>
@@ -169,6 +243,18 @@ $html_body = "
         'Reply-To: ' . $name . ' <' . $email . '>',
     ];
 
+<<<<<<< style
+    $sent = wp_mail($to, $mail_subject, $html_body, $headers);
+
+    if ($sent) {
+        wp_send_json_success(['message' => 'Votre message a bien été envoyé. Merci !']);
+    } else {
+        wp_send_json_error(['message' => "Erreur lors de l'envoi. Veuillez réessayer."]);
+    }
+
+    wp_die();
+}
+=======
     $sent = wp_mail( $to, $mail_subject, $html_body, $headers );
 
     if ( $sent ) {
@@ -179,3 +265,4 @@ $html_body = "
 
     wp_die();
 }
+>>>>>>> main

@@ -2,7 +2,7 @@
   position: relative;
   z-index: 20;
   background-color: #021f24;
-  padding: 40px 0; /* Padding identique haut/bas pour l'équilibre */
+  padding: 40px 0;
   width: 100%;
 }
 
@@ -11,34 +11,34 @@
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Aligne les blocs sur l'axe vertical */
+  align-items: center;
 }
 
 .copyright {
   font-size: 12px;
   color: #667577;
-  margin: 0; /* Supprime la marge par défaut qui décale tout */
-  line-height: 1; /* Évite les surplus d'espace sous le texte */
+  margin: 0;
+  line-height: 1;
 }
 
 .social-links {
   display: flex;
-  align-items: center; /* Aligne les icônes entre elles */
+  align-items: center;
   gap: 20px;
 }
 
 .social-links a {
-  display: flex; /* Force le lien à la taille de l'icône */
+  display: flex;
   align-items: center;
   justify-content: center;
-  line-height: 0; /* Supprime l'espace réservé au texte sous l'icône */
+  line-height: 0;
 }
 
 .social-links svg {
   width: 18px;
   height: 18px;
   color: #667577;
-  display: block; /* Supprime le comportement inline qui crée un gap en bas */
+  display: block;
   transition:
     color 0.2s,
     transform 0.2s;

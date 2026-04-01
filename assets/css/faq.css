@@ -1,0 +1,130 @@
+.faq-global-section {
+  width: 100%;
+  position: relative;
+  z-index: 20;
+}
+
+.faq-global-details > summary {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px;
+  cursor: pointer;
+  background-color: #05141a;
+  color: #ffffff;
+  transition: background-color 0.2s;
+}
+
+.faq-global-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-global-title {
+  font-size: 30px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.faq-toggle-btn {
+  font-size: 40px;
+  font-weight: 300;
+  color: #bdd68f;
+  transition: transform 0.3s;
+  line-height: 1;
+}
+
+.faq-global-details[open] .faq-toggle-btn {
+  transform: rotate(45deg);
+  color: #ffffff;
+}
+
+.faq-content-wrapper {
+  background-color: #ffffff;
+  padding: 50px 40px;
+}
+
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.faq-item {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.faq-item > summary {
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #000000;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.faq-question:hover {
+  color: #bdd68f;
+}
+
+.faq-question::after {
+  content: "+";
+  font-size: 28px;
+  font-weight: 300;
+  color: #000000;
+  transition:
+    transform 0.3s,
+    color 0.2s;
+}
+
+.faq-item[open] .faq-question::after {
+  transform: rotate(45deg);
+  color: #bdd68f;
+}
+
+.faq-answer {
+  padding-bottom: 25px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #666666;
+}
+
+.faq-answer p {
+  margin: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE FAQ
+   ========================================================================== */
+@media (max-width: 768px) {
+  .faq-global-details > summary {
+    padding: 20px;
+  }
+
+  .faq-global-title {
+    font-size: 24px;
+  }
+
+  .faq-content-wrapper {
+    padding: 30px 20px;
+  }
+
+  .faq-question {
+    font-size: 16px;
+    padding: 20px 0;
+  }
+}

@@ -10,7 +10,6 @@
   padding: 0;
 }
 
-/* Titre et Trait noir */
 .contact-header {
   border-bottom: 2px solid #000000;
   margin-bottom: 50px;
@@ -25,17 +24,23 @@
 }
 
 .contact-title span {
-  color: #c9a84c;
+  color: #bdd68f;
+}
+
+/* Force les boîtes à ne pas déborder */
+.contact-grid,
+.contact-infos,
+.contact-form-wrapper {
+  box-sizing: border-box !important;
 }
 
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
-  gap: 0; /* Collé comme la Map */
+  gap: 0;
   border: 1px solid #e0e0e0;
 }
 
-/* Infos de contact (Gauche - Sombre) */
 .contact-infos {
   background-color: #05141a;
   padding: 50px 40px;
@@ -59,6 +64,7 @@
 
 .contact-info-item:hover {
   transform: translateX(5px);
+  color: #b4b4b4;
 }
 
 .contact-info-icon {
@@ -77,7 +83,7 @@
   display: block;
   font-size: 11px;
   font-weight: 600;
-  color: #c9a84c;
+  color: #bdd68f;
   text-transform: uppercase;
   margin-bottom: 4px;
 }
@@ -85,9 +91,10 @@
 .contact-info-value {
   font-size: 15px;
   font-weight: 700;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
-/* Formulaire (Droite - Clair) */
 .contact-form-wrapper {
   background-color: #ffffff;
   padding: 50px 40px;
@@ -114,6 +121,7 @@
   border: 1px solid #e0e0e0;
   background-color: #f9f9f9;
   font-family: inherit;
+  box-sizing: border-box;
 }
 
 .contact-submit {
@@ -125,13 +133,14 @@
   text-transform: uppercase;
   cursor: pointer;
   transition: background 0.2s;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .contact-submit:hover {
-  background-color: #c9a84c;
+  background-color: #bdd68f;
 }
 
-/* Social */
 .contact-social {
   margin-top: 40px;
   padding-top: 30px;
@@ -140,7 +149,7 @@
 
 .contact-social-title {
   font-size: 11px;
-  color: #c9a84c;
+  color: #bdd68f;
   text-transform: uppercase;
   margin-bottom: 15px;
 }
@@ -157,35 +166,6 @@
   font-weight: 700;
 }
 
-/* ── Inversion Header Page Contact ── */
-
-/* 1. Le fond du header */
-.page-template-page-contact .site-header {
-  background-color: #ffffff !important;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-/* 3. Les liens de navigation uniquement */
-.page-template-page-contact .main-nav ul li a {
-  color: #000000 !important;
-}
-
-.page-template-page-contact .main-nav ul li a:hover {
-  color: #c9a84c !important;
-}
-
-/* 4. Le bouton Contact (on garde le style bouton noir/texte blanc) */
-.page-template-page-contact .btn-contact {
-  background-color: #000000 !important;
-  color: #ffffff !important;
-  border: none !important;
-}
-
-.page-template-page-contact .btn-contact:hover {
-  background-color: #c9a84c !important;
-  color: #000000 !important;
-}
-
 .contact-social-btn svg {
   width: 20px;
   height: 20px;
@@ -196,16 +176,79 @@
 }
 
 .contact-social-btn:hover svg {
-  color: #c9a84c;
-  transform: translateY(-3px); /* Petit saut vers le haut */
+  color: #bdd68f;
+  transform: translateY(-3px);
+}
+
+/* ── Inversion Header Page Contact ── */
+.page-template-page-contact .site-header {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.page-template-page-contact .main-nav ul li a {
+  color: #000000 !important;
+}
+
+.page-template-page-contact .main-nav ul li a:hover {
+  color: #bdd68f !important;
+}
+
+.page-template-page-contact .btn-contact {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.page-template-page-contact .btn-contact:hover {
+  background-color: #bdd68f !important;
+  color: #000000 !important;
 }
 
 @media (max-width: 992px) {
   .contact-grid {
     grid-template-columns: 1fr;
   }
-  .container-contact {
-    padding: 0 40px;
+}
+
+@media (max-width: 768px) {
+  .page-template-page-contact .header-right.active .main-nav ul li a {
+    color: #ffffff !important;
+  }
+
+  .page-template-page-contact .header-right.active .btn-contact {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .page-template-page-contact .burger-menu:not(.active) span {
+    background-color: #000000 !important;
+  }
+
+  .contact-section {
+    padding: 20px 0px 60px;
+  }
+
+  .contact-header {
+    margin-bottom: 30px;
+  }
+
+  .contact-title {
+    font-size: 32px;
+  }
+
+  .contact-infos,
+  .contact-form-wrapper {
+    padding: 30px 20px;
+  }
+
+  .contact-info-list {
+    gap: 20px;
+  }
+
+  .contact-social {
+    margin-top: 30px;
+    padding-top: 20px;
   }
 }
 

@@ -6,6 +6,8 @@
 	get_template_part('components/approche');
 	get_template_part('components/pour-qui');
 	get_template_part('components/map');
+	get_template_part('components/avis');
+	get_template_part('components/faq');
 	get_template_part('components/cta-footer');
 	?>
 </main>
