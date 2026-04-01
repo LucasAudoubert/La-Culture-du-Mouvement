@@ -40,7 +40,7 @@ function handle_contact_form() {
     ]);
 
     // ── Email HTML ───────────────────────────────────────────
-    $to           = 'retaliator215@gmail.com';
+    $to           = 'gabriel.lefebvrefristot@gmail.com';
     $mail_subject = $name . ' - Nouvelle demande de créneau';
     $reply_url    = 'mailto:' . esc_attr( $email ) . '?subject=' . rawurlencode( 'Re: ' . $mail_subject );
 
