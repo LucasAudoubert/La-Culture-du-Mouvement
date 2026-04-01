@@ -169,6 +169,10 @@
   height: 220px;
   background-color: rgba(42, 42, 42, 0.9);
   border-radius: 8px;
+<<<<<<< style
+=======
+  /* J'ai supprimé : display: flex; align-items: flex-end; padding: 15px; */
+>>>>>>> main
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -210,12 +214,21 @@
 /* Slider Blog Héros */
 .hero-blog-slider {
   width: 100%;
+<<<<<<< style
   max-width: 350px;
+=======
+  max-width: 350px; /* C'est cette ligne qui bloque la largeur. Change le chiffre si besoin. */
+  height: 250px;
+>>>>>>> main
   background: #05141a;
   overflow: hidden;
   position: relative;
   border-radius: 4px;
+<<<<<<< style
   margin-left: auto;
+=======
+  margin-left: auto; /* Aligne le slider sur la droite */
+>>>>>>> main
 }
 
 .slider-wrapper {
@@ -260,7 +273,11 @@
 
 .slide-date {
   font-size: 10px;
+<<<<<<< style
   color: #bdd68f;
+=======
+  color: #c9a84c;
+>>>>>>> main
   text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 5px;
@@ -274,6 +291,7 @@
   line-height: 1.3;
   text-transform: uppercase;
 }
+<<<<<<< style
 
 @media (max-width: 1024px) {
   .hero-section {
@@ -354,3 +372,5 @@
     justify-content: center;
   }
 }
+=======
+>>>>>>> main

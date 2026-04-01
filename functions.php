@@ -17,3 +17,7 @@ require get_template_directory() . '/inc/template-functions.php';
 if (defined('JETPACK__VERSION')) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+require get_template_directory() . '/inc/contact-form.php';
+
+require get_template_directory() . '/inc/rename-field.php';
