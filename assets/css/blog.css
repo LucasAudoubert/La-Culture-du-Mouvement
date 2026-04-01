@@ -1,0 +1,430 @@
+.blog-section,
+.single-post-section {
+  padding: 150px 0px 80px;
+  min-height: 80vh;
+  background-color: #ffffff;
+  color: #111111;
+}
+
+.container-blog,
+.container-single {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* --- En-tête du blog (Liste) --- */
+.blog-header {
+  border-bottom: 2px solid #000000;
+  margin-bottom: 50px;
+  padding-bottom: 15px;
+}
+
+.blog-title {
+  font-size: 45px;
+  font-weight: 800;
+  color: #000000;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.blog-title span {
+  color: #c9a84c;
+}
+
+/* ==========================================================================
+   LA LISTE D'ARTICLES (page-blog.php)
+   ========================================================================== */
+.blog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.blog-card-horizontal {
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-left: 3px solid #c9a84c;
+  min-height: 300px;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  border-radius: 0;
+}
+
+.blog-card-horizontal:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.blog-thumb {
+  width: 40%;
+  flex-shrink: 0;
+  display: flex;
+  background: #f0f0f0;
+  overflow: hidden;
+}
+
+.blog-thumb a {
+  width: 100%;
+  display: flex; /* Permet à l'image enfant de remplir l'espace */
+}
+
+.blog-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.blog-card-horizontal:hover .blog-thumb img {
+  transform: scale(1.05);
+}
+
+.placeholder-img {
+  width: 100%;
+  height: 100%;
+  background: #f0f0f0;
+}
+
+.blog-content {
+  width: 60%;
+  padding: 30px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.blog-date {
+  font-size: 11px;
+  font-weight: 700;
+  color: #c9a84c;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.blog-post-title {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 0 0 15px 0;
+  text-transform: uppercase;
+}
+
+.blog-post-title a {
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.blog-post-title a:hover {
+  color: #c9a84c;
+}
+
+.blog-excerpt {
+  font-size: 14px;
+  color: #666666;
+  margin-bottom: 25px;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.blog-read-more,
+.blog-read-more:visited {
+  display: inline-block;
+  align-self: flex-start;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  padding: 12px 25px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid #000000;
+  transition: all 0.2s;
+  margin-top: auto;
+}
+
+.blog-read-more:hover {
+  background-color: #c9a84c;
+  border-color: #c9a84c;
+  color: #ffffff;
+}
+
+/* Pagination */
+.blog-pagination {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.blog-pagination .page-numbers {
+  padding: 10px 15px;
+  border: 1px solid #000000;
+  color: #000000;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 13px;
+  margin: 0 5px;
+  transition: all 0.2s;
+}
+
+.blog-pagination .current {
+  background: #000000;
+  border-color: #000000;
+  color: #ffffff;
+}
+
+.blog-pagination a.page-numbers:hover {
+  background: #c9a84c;
+  border-color: #c9a84c;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   L'ARTICLE SEUL (single.php)
+   ========================================================================== */
+.single-header {
+  text-align: center;
+  margin-bottom: 50px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 30px;
+}
+
+.single-title {
+  font-size: 40px;
+  font-weight: 800;
+  color: #000000;
+  text-transform: uppercase;
+  margin-top: 10px;
+  line-height: 1.1;
+}
+
+.single-thumbnail {
+  width: 100%;
+  max-height: 500px;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+.single-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.single-content {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333333;
+}
+
+.single-content p {
+  margin-bottom: 25px;
+}
+
+.single-content h2,
+.single-content h3 {
+  color: #c9a84c;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.single-content a {
+  color: #c9a84c;
+  text-decoration: underline;
+}
+
+.single-content ul,
+.single-content ol {
+  margin-bottom: 25px;
+  margin-left: 20px;
+}
+
+/* ==========================================================================
+   BOUTON RETOUR & AUTRES ARTICLES (single.php)
+   ========================================================================== */
+.back-to-blog {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #c9a84c;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+  text-decoration: none;
+  margin-bottom: 40px;
+  transition:
+    transform 0.2s,
+    color 0.2s;
+}
+
+.back-to-blog svg {
+  width: 18px;
+  height: 18px;
+}
+
+.back-to-blog:hover {
+  color: #000000;
+  transform: translateX(-5px);
+}
+
+.other-blogs-section {
+  background-color: #f9f9f9;
+  padding: 60px 0;
+  border-top: 1px solid #e0e0e0;
+}
+
+.other-blogs-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #000000;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.other-blogs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.other-blog-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.2s,
+    border-color 0.2s;
+}
+
+.other-blog-card:hover {
+  transform: translateY(-5px);
+  border-color: #c9a84c;
+}
+
+.other-blog-thumb {
+  width: 100%;
+  height: 180px;
+  background: #f0f0f0;
+  overflow: hidden;
+}
+
+.other-blog-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.other-blog-card:hover .other-blog-thumb img {
+  transform: scale(1.05);
+}
+
+.other-blog-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.other-blog-date {
+  font-size: 10px;
+  color: #c9a84c;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.other-blog-title {
+  font-size: 16px;
+  color: #000000;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+/* ── Inversion Header Page Blog & Article Seul ── */
+
+/* 1. Le fond du header */
+.page-template-page-blog .site-header,
+.blog .site-header,
+.single-post .site-header {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* 2. Les liens de navigation */
+.page-template-page-blog .main-nav ul li a,
+.blog .main-nav ul li a,
+.single-post .main-nav ul li a {
+  color: #000000 !important;
+}
+
+.page-template-page-blog .main-nav ul li a:hover,
+.blog .main-nav ul li a:hover,
+.single-post .main-nav ul li a:hover {
+  color: #c9a84c !important;
+}
+
+/* 3. Le bouton Contact (on garde le style bouton noir/texte blanc) */
+.page-template-page-blog .btn-contact,
+.blog .btn-contact,
+.single-post .btn-contact {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.page-template-page-blog .btn-contact:hover,
+.blog .btn-contact:hover,
+.single-post .btn-contact:hover {
+  background-color: #c9a84c !important;
+  color: #000000 !important;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 768px) {
+  .blog-section,
+  .single-post-section {
+    padding: 60px 0;
+  }
+
+  .blog-card-horizontal {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .blog-thumb {
+    width: 100%;
+    height: 250px;
+  }
+
+  .blog-content {
+    width: 100%;
+    padding: 25px;
+  }
+
+  .single-title {
+    font-size: 28px;
+  }
+
+  .other-blogs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .container-blog,
+  .container-single {
+    padding: 0 20px;
+  }
+}

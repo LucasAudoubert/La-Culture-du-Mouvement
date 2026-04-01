@@ -11,6 +11,7 @@
                 <li><a href="#approche">APPROCHE</a></li>
                 <li><a href="#apropos">A PROPOS</a></li>
                 <li><a href="#localisation">LOCALISATION</a></li>
+                <li><a href="/Blog">Blog</a></li>
             </ul>
         </nav>
         <a href="/contact" class="btn-contact">CONTACT</a>
