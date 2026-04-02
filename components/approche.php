@@ -1,24 +1,22 @@
 <?php
-// Récupération des champs ACF depuis le CPT approche
+
 $approche_titre = 'L\'APPROCHE';
 
-// Carte 1 - Neurologie
+
 $carte1_titre      = 'NEUROLOGIE';
 $carte1_soustitre  = 'SYSTEME NERVEUX';
 $carte1_paragraphe = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dignissim diam sed lorem gravida vestibulum.';
 
-// Carte 2 - Mobilité
 $carte2_titre      = 'MOBILITÉ';
 $carte2_soustitre  = 'CONTRÔLE MOTEUR';
 $carte2_paragraphe = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dignissim diam sed lorem gravida vestibulum.';
 
-// Carte 3 - Longévité
 $carte3_titre      = 'LONGÉVITÉ';
 $carte3_soustitre  = 'PERFORMANCE DURABLE';
 $carte3_paragraphe = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dignissim diam sed lorem gravida vestibulum.';
 
 $approche_query = new WP_Query(array(
-    'post_type'      => 'approche',
+    'post_type'      => 'landing-page',
     'posts_per_page' => 1,
     'post_status'    => 'publish',
 ));

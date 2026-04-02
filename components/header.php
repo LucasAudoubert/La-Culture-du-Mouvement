@@ -14,9 +14,9 @@
     <div class="header-right" id="header-right">
         <nav class="main-nav">
             <ul>
-                <li><a href="#approche">APPROCHE</a></li>
-                <li><a href="#apropos">A PROPOS</a></li>
-                <li><a href="#localisation">LOCALISATION</a></li>
+                <li><a href="/index.php/#approche">APPROCHE</a></li>
+                <li><a href="/index.php/#pour-qui">A PROPOS</a></li>
+                <li><a href="/index.php/#localisation">LOCALISATION</a></li>
                 <li><a href="/Blog">Blog</a></li>
             </ul>
         </nav>

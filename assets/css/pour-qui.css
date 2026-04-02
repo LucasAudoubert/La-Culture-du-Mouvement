@@ -5,13 +5,11 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  /* Même padding que l'autre section */
   padding: 80px 0;
   color: #ffffff;
   z-index: 10;
 }
 
-/* Overlay sombre */
 .pour-qui-section::before {
   content: "";
   position: absolute;
@@ -26,7 +24,6 @@
 .pour-qui-section .container {
   position: relative;
   z-index: 2;
-  /* Aligné sur l'autre section */
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 80px;
@@ -39,7 +36,6 @@
   align-items: center;
 }
 
-/* --- CÔTÉ IMAGE --- */
 .pour-qui-image-side {
   position: relative;
   padding: 30px;
@@ -93,9 +89,7 @@
   letter-spacing: 1px;
 }
 
-/* --- CÔTÉ TEXTE --- */
 .pour-qui-content .section-title {
-  /* Aligné sur l'autre section */
   font-size: 45px;
   font-weight: 800;
   margin-bottom: 15px;
@@ -121,7 +115,6 @@
   position: relative;
 }
 
-/* Ligne verticale */
 .list-item:not(:last-child)::after {
   content: "";
   position: absolute;
@@ -140,7 +133,6 @@
 }
 
 .item-text h3 {
-  /* Aligné sur l'autre section */
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 8px;
@@ -148,14 +140,12 @@
 }
 
 .item-text p {
-  /* Aligné sur l'autre section */
   font-size: 15px;
   color: #bebebe;
   line-height: 1.6;
   max-width: 450px;
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
   .pour-qui-section .container {
     padding: 0 40px;

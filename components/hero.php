@@ -1,8 +1,9 @@
 <?php
 $args = array(
-    'post_type'      => 'landing-page',
+    'post_type' => 'landing-page',
     'posts_per_page' => 1,
-    'post_status'    => 'publish',
+    'name' => 'heros',
+    'post_status' => 'publish',
 );
 
 $hero_query = new WP_Query($args);
