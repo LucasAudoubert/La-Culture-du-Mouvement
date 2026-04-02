@@ -151,7 +151,6 @@
   }
 }
 
-/* Responsive */
 @media (max-width: 1100px) {
   .section-title-map,
   .map-wrapper {
@@ -172,7 +171,7 @@
   .map-wrapper {
     display: flex;
     flex-direction: column;
-    min-height: auto; /* On enlève la contrainte de hauteur fixe du parent */
+    min-height: auto;
   }
 
   .map-infos {
@@ -180,7 +179,7 @@
   }
 
   .map-container {
-    height: 400px; /* FORCE une hauteur ici, sinon Leaflet reste invisible */
+    height: 400px;
     width: 100%;
   }
 

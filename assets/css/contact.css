@@ -27,7 +27,6 @@
   color: #bdd68f;
 }
 
-/* Force les boîtes à ne pas déborder */
 .contact-grid,
 .contact-infos,
 .contact-form-wrapper {
@@ -135,6 +134,9 @@
   transition: background 0.2s;
   box-sizing: border-box;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 .contact-submit:hover {
@@ -251,4 +253,3 @@
     padding-top: 20px;
   }
 }
-

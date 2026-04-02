@@ -18,6 +18,7 @@ $carte3_paragraphe = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. P
 $approche_query = new WP_Query(array(
     'post_type'      => 'landing-page',
     'posts_per_page' => 1,
+    'name' => 'approche',
     'post_status'    => 'publish',
 ));
 

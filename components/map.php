@@ -24,11 +24,11 @@
                     <span class="map-label">Accès transport</span>
                     <ul class="map-transport">
                         <li>
-                            <span class="map-icon">🚆</span>
+                            <span class="map-icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bus.svg" alt="Gare"></span>
                             <span id="map-gare"></span>
                         </li>
                         <li>
-                            <span class="map-icon">🅿️</span>
+                            <span class="map-icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/voiture.svg" alt="Parking"></span>
                             Parking : <span id="map-parking"></span>
                         </li>
                     </ul>
