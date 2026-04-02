@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Composant : Formulaire de contact et informations
  */
@@ -64,7 +65,7 @@ $contact_telephone_href = preg_replace('/\s+/', '', $contact_telephone);
                 <div class="contact-social">
                     <h4 class="contact-social-title">Suivez-Nous</h4>
                     <div class="contact-social-links">
-                        <a href="#" class="contact-social-btn" aria-label="Instagram">
+                        <a href="https://www.instagram.com/laculturedumouvement/" class="contact-social-btn" aria-label="Instagram">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>

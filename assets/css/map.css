@@ -167,3 +167,24 @@
     font-size: 35px;
   }
 }
+
+@media (max-width: 992px) {
+  .map-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: auto; /* On enlève la contrainte de hauteur fixe du parent */
+  }
+
+  .map-infos {
+    padding: 40px 20px;
+  }
+
+  .map-container {
+    height: 400px; /* FORCE une hauteur ici, sinon Leaflet reste invisible */
+    width: 100%;
+  }
+
+  .map-contact-phone {
+    font-size: 22px;
+  }
+}
